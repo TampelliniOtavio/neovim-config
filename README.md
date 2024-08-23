@@ -12,5 +12,5 @@ Clone this repo on `~/.config` folder:
 
 ```bash
 mkdir -p ~/.config/nvim
-git clone git@github.com:TampelliniOtavio/neovim-config.git ~/.config/nvim
+git clone https://github.com/TampelliniOtavio/neovim-config.git ~/.config/nvim
 ```
