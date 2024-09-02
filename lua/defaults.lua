@@ -41,7 +41,7 @@ vim.g.loaded_netrwPlugin = 1
 -- Line number settings
 vim.opt.number = true
 vim.opt.relativenumber = true
-vim.opt.statuscolumn = "%s %l %r"
+vim.opt.statuscolumn = "%!v:lua.require('utils.statuscolumn').status()"
 
 -- Make comments italic
 vim.cmd("highlight Comment cterm=italic gui=italic")
