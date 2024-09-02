@@ -6,7 +6,14 @@ return {
 	{
 		"williamboman/mason-lspconfig.nvim",
 		opts = {
-			ensure_installed = { "lua_ls", "tsserver", "jsonls", "yamlls", "intelephense" },
+			ensure_installed = {
+				"lua_ls",
+				"tsserver",
+				"jsonls",
+				"yamlls",
+				"intelephense",
+				"gopls",
+			},
 			automatic_installation = true,
 		},
 		config = function(_, opts)
