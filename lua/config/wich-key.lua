@@ -35,4 +35,6 @@ require("which-key").add({
 	{ "<leader>st", "<cmd>Telescope live_grep<cr>", desc = "Search Text" },
   { "<leader>d", group = "Generate Docs" },
   { "<leader>dl", "<cmd>Neogen<cr>", desc = "Lua" },
+  { "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", desc = "Go to Definition" },
+  { "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", desc = "Go to Declaration" }
 })
