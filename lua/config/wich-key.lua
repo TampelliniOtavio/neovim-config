@@ -10,6 +10,40 @@ require("which-key").add({
 	{ "<leader>lf", ":Format<cr>", desc = "Format", mode = "n" },
 	{ "<leader>lF", ":FormatWrite<cr>", desc = "Format and Write", mode = "n" },
 	{
+		"<leader>lt",
+		"<cmd>Trouble diagnostics toggle<cr>",
+		desc = "Diagnostics (Trouble)",
+	},
+	{ "<leader>t", group = "Trouble" },
+	{ "<leader>td", group = "Diagnostics" },
+	{ "<leader>ts", group = "Symbols" },
+	{ "<leader>tl", group = "LSP" },
+	{
+		"<leader>tdX",
+		"<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+		desc = "Buffer Diagnostics (Trouble)",
+	},
+	{
+		"<leader>tss",
+		"<cmd>Trouble symbols toggle focus=false<cr>",
+		desc = "Symbols (Trouble)",
+	},
+	{
+		"<leader>tll",
+		"<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
+		desc = "LSP Definitions / references / ... (Trouble)",
+	},
+	{
+		"<leader>tL",
+		"<cmd>Trouble loclist toggle<cr>",
+		desc = "Location List (Trouble)",
+	},
+	{
+		"<leader>tQ",
+		"<cmd>Trouble qflist toggle<cr>",
+		desc = "Quickfix List (Trouble)",
+	},
+	{
 		"<leader>?",
 		function()
 			require("which-key").show({ global = false })
@@ -33,8 +67,8 @@ require("which-key").add({
 	{ "<leader>s", group = "Search" },
 	{ "<leader>sf", "<cmd>Telescope find_files<cr>", desc = "Search Files" },
 	{ "<leader>st", "<cmd>Telescope live_grep<cr>", desc = "Search Text" },
-  { "<leader>d", group = "Generate Docs" },
-  { "<leader>dl", "<cmd>Neogen<cr>", desc = "Lua" },
-  { "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", desc = "Go to Definition" },
-  { "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", desc = "Go to Declaration" }
+	{ "<leader>d", group = "Generate Docs" },
+	{ "<leader>dl", "<cmd>Neogen<cr>", desc = "Lua" },
+	{ "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", desc = "Go to Definition" },
+	{ "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", desc = "Go to Declaration" },
 })
