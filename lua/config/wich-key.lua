@@ -1,4 +1,12 @@
 require("which-key").add({
+	{
+		"<leader>?",
+		function()
+			require("which-key").show({ global = false })
+		end,
+		desc = "buffer local keymaps (which-key)",
+		hidden = true,
+	},
 	{ "<c-h>", "<c-w><left>", desc = "Left Window", hidden = true },
 	{ "<c-l>", "<c-w><right>", desc = "Right Window", hidden = true },
 	{ "<c-k>", "<c-w><up>", desc = "Up Window", hidden = true },
@@ -9,47 +17,24 @@ require("which-key").add({
 	{ "<leader>l", group = "LSP" },
 	{ "<leader>lf", ":Format<cr>", desc = "Format", mode = "n" },
 	{ "<leader>lF", ":FormatWrite<cr>", desc = "Format and Write", mode = "n" },
-	{
-		"<leader>lt",
-		"<cmd>Trouble diagnostics toggle<cr>",
+  {
+		"<leader>ld",
+		"<cmd>Trouble test<cr>",
 		desc = "Diagnostics (Trouble)",
+	},
+	{
+		"<leader>lq",
+		"<cmd>Trouble qflist toggle<cr>",
+		desc = "Quickfix List (Trouble)",
 	},
 	{ "<leader>t", group = "Trouble" },
 	{ "<leader>td", group = "Diagnostics" },
 	{ "<leader>ts", group = "Symbols" },
 	{ "<leader>tl", group = "LSP" },
 	{
-		"<leader>tdX",
-		"<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
-		desc = "Buffer Diagnostics (Trouble)",
-	},
-	{
-		"<leader>tss",
-		"<cmd>Trouble symbols toggle focus=false<cr>",
-		desc = "Symbols (Trouble)",
-	},
-	{
-		"<leader>tll",
-		"<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
-		desc = "LSP Definitions / references / ... (Trouble)",
-	},
-	{
-		"<leader>tL",
-		"<cmd>Trouble loclist toggle<cr>",
-		desc = "Location List (Trouble)",
-	},
-	{
-		"<leader>tQ",
+		"<leader>tq",
 		"<cmd>Trouble qflist toggle<cr>",
 		desc = "Quickfix List (Trouble)",
-	},
-	{
-		"<leader>?",
-		function()
-			require("which-key").show({ global = false })
-		end,
-		desc = "buffer local keymaps (which-key)",
-		hidden = true,
 	},
 	{ "<leader>e", ":NvimTreeToggle<cr>", desc = "Open Tree" },
 	{ "<leader>c", ":bdelete<cr>", desc = "Close Tab" },
@@ -60,8 +45,8 @@ require("which-key").add({
 	{ "<leader>bn", ":BufferLineCycleNext<cr>", desc = "go to next" },
 	{ "<leader>bb", ":BufferLineCyclePrev<cr>", desc = "go to previous" },
 	{ "<leader>bj", ":BufferLinePick<cr>", desc = "jump to" },
-	{ "<leader>/", desc = "toggle line comment", mode = { "n", "v" } }, -- configure in plugins-configuration/comment.lua
-	{ "<leader>\\", desc = "toggle block comment", mode = { "n", "v" } }, -- configure in plugins-configuration/comment.lua
+	{ "<leader>/", desc = "toggle line comment", mode = { "n", "v" } }, -- configure in plugins/comment.lua
+	{ "<leader>\\", desc = "toggle block comment", mode = { "n", "v" } }, -- configure in plugins/comment.lua
 	{ "<leader>gg", "<cmd>LazyGit<cr>", desc = "lazygit" },
 	{ "<leader>f", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
 	{ "<leader>s", group = "Search" },
