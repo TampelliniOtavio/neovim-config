@@ -20,6 +20,7 @@ return {
 			"fugitive",
 			"NvimTree",
 			"TelescopePrompt",
+			"trouble",
 		},
 		-- filetypes_allowlist: filetypes to illuminate, this is overridden by filetypes_denylist
 		-- You must set filetypes_denylist = {} to override the defaults to allow filetypes_allowlist to take effect
@@ -58,7 +59,7 @@ return {
 		-- case_insensitive_regex: sets regex case sensitivity
 		case_insensitive_regex = false,
 	},
-  config = function(_, opts)
-    require('illuminate').configure(opts)
-  end
+	config = function(_, opts)
+		require("illuminate").configure(opts)
+	end,
 }
