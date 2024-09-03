@@ -45,6 +45,18 @@ local colors = {
 		"#ff8e00",
 		"#ff0000",
 	},
+	Blue = {
+		"#75caff",
+		"#6fbcff",
+		"#69acff",
+		"#639cff",
+		"#5d8aff",
+		"#5678ff",
+		"#5065ff",
+		"#4a50ff",
+		"#4e44ff",
+		"#583eff",
+	},
 }
 
 --- Define a Pipe on Status
