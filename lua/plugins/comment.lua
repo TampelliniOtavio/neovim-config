@@ -21,14 +21,14 @@ return {
 				-- Line-comment toggle keymap
 				line = "<leader>/",
 				-- Block-comment toggle keymap
-				-- block = "gbc",
+				block = "<leader>\\",
 			},
 			---Enable ke---LHS of operator-pending mappings in NORMAL and VISUAL mode
 			opleader = {
 				-- Line-comment keymap
 				line = "<leader>/",
 				-- Block-comment keymap
-				-- block = "gb",
+				block = "<leader>\\",
 			},
 			-- NOTE: If given `false` then the plugin won't create any mappings
 			mappings = {
