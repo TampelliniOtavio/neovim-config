@@ -1,12 +1,13 @@
 local M = {}
 
 local number_mode = {
-  All = "all",
-  Hybrid = "hybrid",
-  Normal = "normal",
-  Relative = "relative"
+	All = "all",
+	Hybrid = "hybrid",
+	Normal = "normal",
+	Relative = "relative",
 }
 
+-- Create more on https://colordesigner.io/gradient-generator
 local colors = {
 	Grayscale = {
 		"#ffffff",
@@ -46,8 +47,10 @@ local colors = {
 	},
 }
 
-M.pipe = function ()
-  return "│"
+--- Define a Pipe on Status
+--- @return string
+M.pipe = function()
+	return "│"
 end
 
 local config = {
@@ -56,12 +59,10 @@ local config = {
 	colors = colors.Grayscale,
 	color_step = 1,
 	git_enabled = true,
-	filetype_disabled = {
-		"NvimTree",
-		"TelescopePrompt",
-	},
 }
 
+--- Define the Git Status on Status
+--- @return string
 M.gitStatus = function()
 	if not config.git_enabled then
 		return ""
@@ -69,8 +70,11 @@ M.gitStatus = function()
 	return "%s"
 end
 
-M.border = function()
-	-- See how the characters is larger then the rest? That's how we make the border look like a single line
+--- Define the Colors on Status
+--- Is based on the Relative Row Number
+--- The function setHl need to execute before this
+--- @see setHl
+M.colors = function()
 	local row_number = vim.v.relnum
 
 	if #config.colors == 1 then
@@ -94,20 +98,27 @@ M.border = function()
 	return "%#Gradient_" .. index .. "#" .. config.border
 end
 
+--- Define a Space On Status
 M.space = function()
 	return " "
 end
 
+--- Set the Gradient Palette
+--- @return nil
 M.setHl = function()
 	for i, color in ipairs(config.colors) do
 		vim.api.nvim_set_hl(0, "Gradient_" .. i, { fg = color })
 	end
 end
 
+--- Insert Number on Status
+--- @param separator string | nil default space
+--- @return string
+--- If the config.number_mode is All the separator is used to separate the relative and absolute line
 M.number = function(separator)
-  if not separator then
-    separator = M.space()
-  end
+	if not separator then
+		separator = M.space()
+	end
 
 	local text = ""
 
@@ -115,31 +126,27 @@ M.number = function(separator)
 		text = text .. vim.v.lnum
 	elseif config.number_mode == number_mode.Relative then
 		text = text .. vim.v.relnum
-  elseif config.number_mode == number_mode.All then
-    text = text .. vim.v.lnum .. separator .. vim.v.relnum
+	elseif config.number_mode == number_mode.All then
+		text = text .. vim.v.lnum .. separator .. vim.v.relnum
 	elseif config.number_mode == number_mode.Hybrid then
-    text = text .. (vim.v.relnum == 0 and vim.v.lnum or vim.v.relnum)
+		text = text .. (vim.v.relnum == 0 and vim.v.lnum or vim.v.relnum)
 	end
 
 	return text
 end
 
+--- Main Function
+--- Define the custom string to statuscolumn var
+--- @return string
 M.status = function()
 	local text = ""
-	local curr_filetype = vim.bo.filetype
-
-	for _, filetype in pairs(config.filetype_disabled) do
-		if curr_filetype == filetype then
-			return text
-		end
-	end
 
 	M.setHl()
 
 	text = table.concat({
 		M.gitStatus(),
-		M.border(),
-    M.number(M.space()),
+		M.colors(),
+		M.number(),
 		M.space(),
 	})
 

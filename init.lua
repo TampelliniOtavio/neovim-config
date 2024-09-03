@@ -9,3 +9,6 @@ require("colorscheme")
 
 -- Keymaps
 require("config.wich-key")
+
+-- Auto Commands
+require("autocmds")
