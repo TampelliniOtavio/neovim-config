@@ -5,6 +5,7 @@ return {
 	opts = {
 		override = {
 			[".env.example"] = utils.get_icon_by_filename(".env"),
+			["docker-compose.production.yml"] = utils.get_icon_by_filename("docker-compose.yml"),
 		},
 	},
 }
