@@ -11,7 +11,6 @@ return {
 				"tsserver",
 				"jsonls",
 				"yamlls",
-				"intelephense",
 				"gopls",
 			},
 			automatic_installation = true,
