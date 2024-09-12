@@ -17,7 +17,7 @@ require("which-key").add({
 	{ "<leader>l", group = "LSP" },
 	{ "<leader>lf", ":Format<cr>", desc = "Format", mode = "n" },
 	{ "<leader>lF", ":FormatWrite<cr>", desc = "Format and Write", mode = "n" },
-  {
+	{
 		"<leader>ld",
 		"<cmd>Trouble test<cr>",
 		desc = "Diagnostics (Trouble)",
@@ -56,4 +56,12 @@ require("which-key").add({
 	{ "<leader>dl", "<cmd>Neogen<cr>", desc = "Lua" },
 	{ "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", desc = "Go to Definition" },
 	{ "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", desc = "Go to Declaration" },
+	{
+		"<leader>j",
+		function()
+			require("trevj").format_at_cursor()
+		end,
+		desc = "Spread Line at Cursor",
+	},
+	{ "<leader>J", "J", desc = "Join Line at Cursor" },
 })
