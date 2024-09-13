@@ -64,4 +64,6 @@ require("which-key").add({
 		desc = "Spread Line at Cursor",
 	},
 	{ "<leader>J", "J", desc = "Join Line at Cursor" },
+  { "<leader>E", group = "Emmet" },
+  { "<leader>E,", desc = "Convert On Cursor", mode = "ni" },
 })
