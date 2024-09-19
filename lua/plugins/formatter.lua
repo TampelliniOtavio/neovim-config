@@ -14,6 +14,14 @@ return {
 			require("formatter.filetypes.lua").stylua,
 		}
 
+		opts.filetype.typescriptreact = {
+			require("formatter.filetypes.typescriptreact").prettierd,
+		}
+
+		opts.filetype.typescript = {
+			require("formatter.filetypes.typescript").prettierd,
+		}
+
 		require("formatter").setup(opts)
 	end,
 }
