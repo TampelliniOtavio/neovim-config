@@ -16,7 +16,7 @@ return {
 		}
 
 		vim.api.nvim_create_autocmd("FileType", {
-			pattern = { "*.html", "*.css", "*.blade.php", "*.tsx", "*.jsx" },
+			pattern = { "*.html", "*.css", "*.blade.php", "*.tsx", "*.jsx", "*.astro" },
 			callback = "EmmetInstall",
 		})
 	end,
