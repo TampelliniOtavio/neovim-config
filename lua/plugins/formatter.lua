@@ -22,6 +22,10 @@ return {
 			require("formatter.filetypes.typescript").prettierd,
 		}
 
+    opts.filetype.go = {
+      require("formatter.filetypes.go").gofmt,
+    }
+
 		require("formatter").setup(opts)
 	end,
 }
