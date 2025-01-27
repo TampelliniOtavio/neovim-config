@@ -47,7 +47,10 @@ require("which-key").add({
 	{ "<leader>bj", ":BufferLinePick<cr>", desc = "jump to" },
 	{ "<leader>/", desc = "toggle line comment", mode = { "n", "v" } }, -- configure in plugins/comment.lua
 	{ "<leader>\\", desc = "toggle block comment", mode = { "n", "v" } }, -- configure in plugins/comment.lua
+  {"<leader>g", group = "Git"},
 	{ "<leader>gg", "<cmd>LazyGit<cr>", desc = "lazygit" },
+	{ "<leader>gb", group = "Blame" },
+	{ "<leader>gbo", "<cmd>GitBlameOpenCommitURL<cr>", desc = "Open the commit URL in browser" },
 	{ "<leader>f", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
 	{ "<leader>s", group = "Search" },
 	{ "<leader>sf", "<cmd>Telescope find_files<cr>", desc = "Search Files" },
