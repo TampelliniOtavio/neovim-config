@@ -91,6 +91,13 @@ M.attached_clients = {
 	},
 }
 
-M.disabled_filetypes = {}
+M.disabled_filetypes = {
+  -- "dapui_watches",
+  -- "dapui_stacks",
+  -- "dapui_breakpoints",
+  -- "dapui_scopes",
+  -- "dapui_console",
+  -- "dap-repl",
+}
 
 return M
