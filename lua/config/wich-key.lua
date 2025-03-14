@@ -74,6 +74,7 @@ require("which-key").add({
 	{ "<leader>Dl", "<cmd>Neogen<cr>", desc = "Lua" },
 	{ "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", desc = "Go to Definition" },
 	{ "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", desc = "Go to Declaration" },
+	{ "gr", "<cmd>lua vim.lsp.buf.references()<cr>", desc = "Go to References" },
 	{
 		"<leader>j",
 		function()
