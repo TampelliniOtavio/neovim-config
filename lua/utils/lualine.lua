@@ -2,7 +2,8 @@ local M = {}
 -- Returns a string with a list of attached LSP clients, including
 -- formatters and linters from null-ls, nvim-lint and formatter.nvim
 local function get_attached_clients()
-	local buf_clients = vim.lsp.get_clients({ bufnr = 1 })
+	local current_buf = vim.fn.bufnr()
+	local buf_clients = vim.lsp.get_clients({ bufnr = current_buf })
 	if #buf_clients == 0 then
 		return "LSP Inactive"
 	end
@@ -92,12 +93,12 @@ M.attached_clients = {
 }
 
 M.disabled_filetypes = {
-  -- "dapui_watches",
-  -- "dapui_stacks",
-  -- "dapui_breakpoints",
-  -- "dapui_scopes",
-  -- "dapui_console",
-  -- "dap-repl",
+	-- "dapui_watches",
+	-- "dapui_stacks",
+	-- "dapui_breakpoints",
+	-- "dapui_scopes",
+	-- "dapui_console",
+	-- "dap-repl",
 }
 
 return M
