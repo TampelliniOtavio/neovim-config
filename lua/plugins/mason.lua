@@ -73,6 +73,16 @@ return {
 					},
 				},
 			})
+
+			lspconfig.volar.setup({
+				filetypes = { "vue" },
+				init_options = {
+					vue = {
+						hybridMode = false,
+					},
+				},
+			})
+
 		end,
 	},
 }
