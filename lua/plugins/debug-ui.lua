@@ -82,6 +82,9 @@ return {
 				indent = 1,
 				max_value_lines = 100,
 			},
+			select_window = function ()
+				return vim.fn.bufnr()
+			end
 		},
 		config = function(_, opts)
 			require("dapui").setup(opts)
