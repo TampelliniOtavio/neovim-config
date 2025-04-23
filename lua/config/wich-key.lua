@@ -61,7 +61,7 @@ require("which-key").add({
   { "<leader>dT", "<cmd>DapTerminate<cr>", desc = "Terminate session" },
   { "<leader>dd", "<cmd>lua require('dap').toggle_breakpoint()<cr>", desc = "Toggle Breakpoint" },
   { "<leader>dD", "<cmd>lua require('dap').set_breakpoint()<cr>", desc = "Set Breakpoint" },
-  { "<leader>dr", "<cmd>lua require('dap').repl.open()<cr>", desc = "Open Repl" },
+  { "<leader>dr", "<cmd>lua require('dap').repl.toggle()<cr>", desc = "Toggle Repl" },
   { "<leader>dl", "<cmd>lua require('dap').run_last()<cr>", desc = "Run Last" },
   { "<leader>dc", "<cmd>lua require('dap').continue()<cr>", desc = "Continue" },
   { "<leader>do", "<cmd>lua require('dap').step_over()<cr>", desc = "Step Over" },
