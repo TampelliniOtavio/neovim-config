@@ -1,3 +1,3 @@
 local utils = require("utils.ftplugin")
 
-utils.setTabWidth(2)
+utils.setTabWidth(2, false)
