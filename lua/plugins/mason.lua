@@ -7,6 +7,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		opts = {
 			ensure_installed = {
+				"vue_ls",
 				"lua_ls",
 				"ts_ls",
 				"jsonls",
@@ -55,6 +56,25 @@ return {
 						validate = { enable = true },
 					},
 				},
+			})
+
+			local vue_language_server_path = vim.fn.stdpath("data")
+				.. "/mason/packages/vue-language-server/node_modules/@vue/language-server"
+
+			local vue_plugin = {
+				name = "@vue/typescript-plugin",
+				location = vue_language_server_path,
+				languages = { "vue" },
+				configNamespace = "typescript",
+			}
+
+			lspconfig.ts_ls.setup({
+				init_options = {
+					plugins = {
+						vue_plugin,
+					},
+				},
+				filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
 			})
 
 			lspconfig.vue_ls.setup({
