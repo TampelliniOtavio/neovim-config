@@ -3,6 +3,7 @@ vim.opt.smarttab = true
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.termguicolors = true
+vim.o.expandtab = true
 
 -- Using System Clipboard
 vim.opt.clipboard = "unnamedplus"
