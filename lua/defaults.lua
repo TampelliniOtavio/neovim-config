@@ -1,4 +1,5 @@
 -- Usability
+vim.opt.foldlevelstart = 99
 vim.opt.smarttab = true
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
