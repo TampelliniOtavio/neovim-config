@@ -7,8 +7,11 @@ require("config.lazy")
 -- Colorscheme Configuration
 require("colorscheme")
 
--- Keymaps
-require("config.wich-key")
+local utils = require('utils.ftplugin')
+
+-- Autoload all config folder, excluding lazy.lua
+utils.loadFolder('/lua/config', {'lazy.lua'})
 
 -- Auto Commands
 require("autocmds")
+
