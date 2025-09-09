@@ -26,6 +26,10 @@ return {
       require("formatter.filetypes.go").gofmt,
     }
 
+    opts.filetype.blade = {
+      require("formatter.filetypes.blade").default,
+    }
+
 		require("formatter").setup(opts)
 	end,
 }
