@@ -8,6 +8,9 @@ return {
 	opts = {
 		hijack_cursor = true,
 		sync_root_with_cwd = true,
+		update_focused_file = {
+			enable = true,
+		},
 		filters = {
 			custom = {
 				"^.git$",
