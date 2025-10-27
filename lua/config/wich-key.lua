@@ -1,3 +1,5 @@
+local utils = require("utils.ftplugin")
+
 require("which-key").add({
 	{
 		"<leader>?",
@@ -45,6 +47,8 @@ require("which-key").add({
 	{ "<leader>bn", ":BufferLineCycleNext<cr>", desc = "go to next" },
 	{ "<leader>bb", ":BufferLineCyclePrev<cr>", desc = "go to previous" },
 	{ "<leader>bj", ":BufferLinePick<cr>", desc = "jump to" },
+	{ "<leader>bt", group = "Toggle..." },
+	{ "<leader>btc", function () utils.toggleConcealLevel(0, 2) end, desc = "Conceal Level" },
 	{ "<leader>/", desc = "toggle line comment", mode = { "n", "v" } }, -- configure in plugins/comment.lua
 	{ "<leader>\\", desc = "toggle block comment", mode = { "n", "v" } }, -- configure in plugins/comment.lua
   {"<leader>g", group = "Git"},

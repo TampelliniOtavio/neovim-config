@@ -42,4 +42,19 @@ M.loadFolder = function(folder_path, exclude)
 	end
 end
 
+---@param first? number default 0
+---@param second? number default 2
+M.toggleConcealLevel = function (first, second)
+  first = first or 0
+  second = second or 2
+
+  if vim.wo.conceallevel == first then
+    vim.wo.conceallevel = second
+    vim.g.indentLine_conceallevel = second
+  else
+    vim.wo.conceallevel = first
+    vim.g.indentLine_conceallevel = first
+  end
+end
+
 return M
