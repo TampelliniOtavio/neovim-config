@@ -30,6 +30,18 @@ return {
       require("formatter.filetypes.blade").default,
     }
 
+    opts.filetype.css = {
+      require("formatter.filetypes.css").prettier
+    }
+
+    opts.filetype.sass = {
+      require("formatter.filetypes.sass").prettier
+    }
+
+    opts.filetype.scss = {
+      require("formatter.filetypes.scss").prettier
+    }
+
 		require("formatter").setup(opts)
 	end,
 }
