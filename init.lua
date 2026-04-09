@@ -1,17 +1,2 @@
--- Default configs, autocmds and execs
-require("defaults")
-
--- Plugin Manager
+-- bootstrap lazy.nvim, LazyVim and your plugins
 require("config.lazy")
-
--- Colorscheme Configuration
-require("colorscheme")
-
-local utils = require('utils.ftplugin')
-
--- Autoload all config folder, excluding lazy.lua
-utils.loadFolder('/lua/config', {'lazy.lua'})
-
--- Auto Commands
-require("autocmds")
-
