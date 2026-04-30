@@ -27,7 +27,6 @@ return {
       "html",
       "javascriptreact",
       "typescriptreact",
-      "vue",
       "svelte",
       "xml",
       "html",

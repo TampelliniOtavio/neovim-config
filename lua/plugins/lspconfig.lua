@@ -119,10 +119,37 @@ return {
             enabled = false,
           },
           ts_ls = {
-            filetypes = { "javascript", "typescript", "javascriptreact", "typescriptreact" },
+            filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact" },
           },
+          vue_ls = {},
           vtsls = {
             filetypes = { "vue" },
+            on_attach = function(client)
+              local existing_capabilities = client.server_capabilities
+              if existing_capabilities == nil then
+                return
+              end
+              if vim.bo.filetype == "vue" then
+                existing_capabilities.semanticTokensProvider.full = false
+              else
+                existing_capabilities.semanticTokensProvider.full = true
+              end
+            end,
+            settings = {
+              vtsls = {
+                tsserver = {
+                  globalPlugins = {
+                    {
+                      name = "@vue/typescript-plugin",
+                      location = vim.fn.stdpath("data")
+                        .. "/mason/packages/vue-language-server/node_modules/@vue/language-server",
+                      languages = { "vue" },
+                      configNamespace = "typescript",
+                    },
+                  },
+                },
+              },
+            },
           },
           intelephense = {},
           gopls = {},
